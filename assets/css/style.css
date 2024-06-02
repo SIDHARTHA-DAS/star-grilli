@@ -575,7 +575,7 @@ transform: skewX(-0.08turn) translateX(-180%);
 
 .header.active{
   padding-block: 20px;
-  background-color: var(--eerie-black-4ss);
+  background-color: var(--eerie-black-4);
   border-color: var(--black-alpha-15);
 }
 
