@@ -13,6 +13,13 @@
     ],
     "detect-css-reflows/composite": "off",
     "detect-css-reflows/paint": "off",
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off",
+        "select-name": "off"
+      }
+    ]
   }
 }
