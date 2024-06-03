@@ -315,7 +315,7 @@ body.nav-active{overflow: hidden;}
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: var(--letterSpacing-2);
-  margin-bottom: 12px;
+  margin-block-end: 12px;
 }
 
 
@@ -349,7 +349,7 @@ body.nav-active{overflow: hidden;}
   transform: translateX(-50%);
   width: 200%;
   height: 200%;
-  border-radius: var(--radius-24);
+  border-radius: var(--radius-circle);
   background-color: var(--gold-crayola);
   transition: var(--transition-2);
   z-index: -1;
