@@ -54,7 +54,7 @@ const hideHeader = function () {
     if (isScrollBottom) {
         header.classList.add("hide");
     } else {
-        header.classList.remove("hide");
+         header.classList.remove("hide");
     }
 
 
@@ -163,3 +163,18 @@ window.addEventListener("mousemove", function (event) {
    }
 
 });
+
+
+/**
+ * scroll up
+ */
+
+
+// window.addEventListener('wheel', function(event) {
+//     if (event.deltaY < 0) {
+// window.scrollBy({
+//             top: -600, 
+//             behavior: 'smooth'
+//         });
+//     }
+// });
