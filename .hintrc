@@ -20,6 +20,7 @@
         "label": "off",
         "select-name": "off"
       }
-    ]
+    ],
+    "disown-opener": "off"
   }
 }
