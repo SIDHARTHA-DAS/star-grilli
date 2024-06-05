@@ -50,8 +50,8 @@ const backTopBtn = document.querySelector("[data-back-top-btn]");
 let lastScrollpos = 0;
 
 const activeHeader = function () {
-    const isScrollBottom = lastScrollpos < window.scrollY;
-    if (isScrollBottom) {
+    const lastScrollpos = isScrollBottom < window.scrollY;
+    if (lastScrollpos) {
         header.classList.add("hide");
     } else {
          header.classList.remove("hide");
