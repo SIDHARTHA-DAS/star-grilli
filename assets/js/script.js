@@ -34,7 +34,7 @@ const overlay = document.querySelector("[data-overlay]");
 const toggleNavbar = function() {
     navbar.classList.toggle("active");
     overlay.classList.toggle("active");
-    document.body.classList.toggle("nav-active");
+    document.body.classList.toggle("active");
 }
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
@@ -49,7 +49,7 @@ const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 let lastScrollpos = 0;
 
-const hideHeader = function () {
+const activeHeader = function () {
     const isScrollBottom = lastScrollpos < window.scrollY;
     if (isScrollBottom) {
         header.classList.add("hide");
@@ -65,12 +65,24 @@ window.addEventListener("scroll",function (){
     if (window.scrollY >= 50 ) {
         header.classList.add("active");
         backTopBtn.classList.add("active");
-        hideHeader();
+        activeHeader();
     }else{
         header.classList.remove("active");
         backTopBtn.classList.remove("active");
     }
 });
+
+const hideHeader = function () {
+    const lastScrollpos = isScrollBottom < window.scrollY;
+    if (lastScrollpos) {
+        header.classList.add("active");
+    } else {
+         header.classList.remove("active");
+    }
+
+
+    lastScrollpos = window.scrollY;
+}
 
 /**
  * HEro slider
@@ -170,7 +182,7 @@ window.addEventListener("mousemove", function (event) {
  */
 
 
-// window.addEventListener('wheel', function(event) {
+//  window.addEventListener('wheel', function(event) {
 //     if (event.deltaY < 0) {
 // window.scrollBy({
 //             top: -600, 
@@ -178,3 +190,35 @@ window.addEventListener("mousemove", function (event) {
 //         });
 //     }
 // });
+
+
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+// const sections = document.querySelectorAll('section[id]')
+    
+// const scrollActive = () =>{
+//   	const scrollDown = window.scrollY
+
+// 	sections.forEach(current =>{
+// 		const sectionHeight = current.offsetHeight,
+// 			  sectionTop = current.offsetTop - 58,
+// 			  sectionId = current.getAttribute('id'),
+// 			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+// 		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+// 			sectionsClass.classList.add('active-link')
+// 		}else{
+// 			sectionsClass.classList.remove('active-link')
+// 		}                                                    
+// 	})
+// }
+// window.addEventListener('scroll', scrollActive)
+
+// /*=============== SHOW SCROLL UP ===============*/ 
+// const scrollUp = () =>{
+// 	const scrollUp = document.getElementById('scroll-up')
+//     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+// 	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+// 						: scrollUp.classList.remove('show-scroll')
+// }
+// window.addEventListener('scroll', scrollUp)
