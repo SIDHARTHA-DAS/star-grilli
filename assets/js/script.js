@@ -37,6 +37,14 @@ const toggleNavbar = function() {
     document.body.classList.toggle("active");
 }
 
+document.onclick = function(e){
+    if(!data-nav-toggler.contains(e.target) && !data-overlay.contains(e.target) ){
+        navbar.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.classList.remove("active");
+    }
+}
+
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
 
@@ -49,17 +57,6 @@ const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 let lastScrollpos = 0;
 
-const activeHeader = function () {
-    const lastScrollpos = isScrollBottom < window.scrollY;
-    if (lastScrollpos) {
-        header.classList.add("hide");
-    } else {
-         header.classList.remove("hide");
-    }
-
-
-    lastScrollpos = window.scrollY;
-}
 
 window.addEventListener("scroll",function (){
     if (window.scrollY >= 50 ) {
@@ -67,7 +64,7 @@ window.addEventListener("scroll",function (){
         backTopBtn.classList.add("active");
         activeHeader();
     }else{
-        header.classList.remove("active");
+        header.classList.add("active");
         backTopBtn.classList.remove("active");
     }
 });
@@ -75,7 +72,7 @@ window.addEventListener("scroll",function (){
 const hideHeader = function () {
     const lastScrollpos = isScrollBottom < window.scrollY;
     if (lastScrollpos) {
-        header.classList.add("active");
+        header.classList.remove("active");
     } else {
          header.classList.remove("active");
     }
